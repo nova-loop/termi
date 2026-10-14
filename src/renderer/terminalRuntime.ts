@@ -8,6 +8,7 @@ import { FitAddon } from '@xterm/addon-fit';
 import { WebglAddon } from '@xterm/addon-webgl';
 import { WebLinksAddon } from '@xterm/addon-web-links';
 import '@xterm/xterm/css/xterm.css';
+import { keyInput } from './terminalKeys';
 import { TERMINAL_FONT, THEME } from './theme';
 import { noWrapCols, scrollToCursor, sidewaysDelta } from './wordWrap';
 import type { CursorStyle, PtyCreated } from '@/shared/types';
@@ -104,6 +105,15 @@ export class TerminalRuntime {
         },
       ),
     );
+    // A key with bytes of its own goes to the shell through onData, as a typed key does. Its
+    // default is stopped, so no keypress follows and xterm's textarea gets no new line.
+    this.term.attachCustomKeyEventHandler((event) => {
+      const data = keyInput(event);
+      if (data === null) return true;
+      event.preventDefault();
+      this.term.input(data);
+      return false;
+    });
     this.term.onData((data) => {
       if (this.ptyId !== null) window.termi.pty.write(this.ptyId, data);
       this.lastInput = performance.now();

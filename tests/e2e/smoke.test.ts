@@ -502,6 +502,21 @@ describe('Termi', () => {
     expect(bytes.subarray(press + 6, press + 10).toString('latin1')).toBe('\x1b[M#');
   });
 
+  // Claude Code reads ESC and CR as a new line in its prompt, and plain CR as send.
+  it('sends Shift+Enter as ESC and CR, apart from Enter', async () => {
+    await page.locator('.tab-view.active .xterm-helper-textarea').first().focus();
+    await page.keyboard.type(`cat > '${marker(15)}'`);
+    await page.keyboard.press('Enter');
+    // The shell has left its line editor once the redirect makes the file, so cat reads the keys
+    // that follow, and the terminal driver turns each CR into a newline on the way.
+    await until(() => fs.existsSync(marker(15)));
+    await page.keyboard.press('Shift+Enter');
+    await page.keyboard.press('Enter');
+    await page.keyboard.press('Control+D');
+    await until(() => fs.readFileSync(marker(15), 'utf8').endsWith('\n\n'));
+    expect(fs.readFileSync(marker(15), 'utf8')).toBe('\x1b\n\n');
+  });
+
   it('types a dropped file into the terminal under the pointer, quoted for the shell', async () => {
     const dropped = path.join(dir, "it's a drop.txt");
     fs.writeFileSync(dropped, 'dropped\n');
