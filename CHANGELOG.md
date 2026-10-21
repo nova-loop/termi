@@ -2,6 +2,42 @@
 
 Every release of Termi, newest first. Each section is written by `scripts/changelog.mjs` from the Conventional Commits since the release before it, and is that version's GitHub Release notes.
 
+## v0.1.5 (2026-10-21)
+
+[Compare with v0.1.4](https://github.com/webanion/termi/compare/v0.1.4...v0.1.5)
+
+### Fixes
+
+- **terminal:** send Shift+Enter as ESC and CR, so Claude Code adds a new line ([a083e0c](https://github.com/webanion/termi/commit/a083e0c19353c348c46b0abbc6c943b56aea08c6), [#103](https://github.com/webanion/termi/pull/103))
+- **renderer:** let the Reopen menu take focus itself ([3f2b99e](https://github.com/webanion/termi/commit/3f2b99e76c6647ee5f697af3c928cb942616e678), [#92](https://github.com/webanion/termi/pull/92))
+- **renderer:** make each sidebar row's name a button, and rename a terminal with F2 ([0181cb4](https://github.com/webanion/termi/commit/0181cb4774f2fe42b82b155c6a58a1082173d21f), [#92](https://github.com/webanion/termi/pull/92))
+- **renderer:** reach the tab strip's tabs with the keyboard, as WAI-ARIA tabs ([541e840](https://github.com/webanion/termi/commit/541e84080ed60c9fea94857b647383ab87363a99), [#92](https://github.com/webanion/termi/pull/92))
+- **main:** ignore a page load that a reload replaced, and exit with 1 when the page fails ([9495e79](https://github.com/webanion/termi/commit/9495e7953edc0df6a152b5640edacfc1c00c45ad), [#87](https://github.com/webanion/termi/pull/87))
+- **mcp:** name a tool, resource or target that is not a string as JSON ([0bc56cc](https://github.com/webanion/termi/commit/0bc56cc65cabdc2bf629f22365ffb7716b6c5a8f), [#87](https://github.com/webanion/termi/pull/87))
+- **main:** handle the promises the main process was dropping ([3a21571](https://github.com/webanion/termi/commit/3a21571e57893f4fc86e8275b244d23fdb9fb036), [#87](https://github.com/webanion/termi/pull/87))
+
+### Documentation
+
+- **contributing:** describe the editor setup that matches CI ([36423e8](https://github.com/webanion/termi/commit/36423e81f0d33c68732e9946d4e09ff3747e0c11), [#97](https://github.com/webanion/termi/pull/97))
+
+### Tests
+
+- **e2e:** wait for the dropped file's copy to be written, not only created ([b6f1a2f](https://github.com/webanion/termi/commit/b6f1a2f2a387160bc6035309831775ac05fd9274), [#94](https://github.com/webanion/termi/pull/94))
+
+### Other
+
+- **lint:** turn on the rules ESLint's recommended presets run ([afefb90](https://github.com/webanion/termi/commit/afefb90fb752b1546b22b4c10c371171ad663930), [#100](https://github.com/webanion/termi/pull/100))
+- **docs:** remove the stray palette padding screenshot ([a59e26b](https://github.com/webanion/termi/commit/a59e26b55c23aedc019d5415cbe5c43ed1896234), [#98](https://github.com/webanion/termi/pull/98))
+- **ci:** check that no Markdown paragraph is hard wrapped ([a29a3c6](https://github.com/webanion/termi/commit/a29a3c673b0e9c00da0ac34408efacfd185c0712), [#95](https://github.com/webanion/termi/pull/95))
+- **mcp:** write the MCP guide one line per paragraph ([7dc82c3](https://github.com/webanion/termi/commit/7dc82c3588da000d8dd5ced6278b3d76e862dd42), [#95](https://github.com/webanion/termi/pull/95))
+- **lint:** turn on the jsx-a11y rules ([87838ab](https://github.com/webanion/termi/commit/87838ab6d4efa956a1daf74e208eecc76e83ffe8), [#93](https://github.com/webanion/termi/pull/93))
+- **renderer:** clear what the jsx-a11y rules find after the keyboard fixes ([fa8819b](https://github.com/webanion/termi/commit/fa8819b29366b46401183eee156c3c1105e41ae3), [#93](https://github.com/webanion/termi/pull/93))
+- **deps-dev:** bump the minor-and-patch group across 1 directory with 2 updates ([d6d04b0](https://github.com/webanion/termi/commit/d6d04b00f96a92fa58b1f0362973300efa9a678b), [#90](https://github.com/webanion/termi/pull/90))
+- **lint:** read the type-aware and warning settings from Oxlint's config ([d96f286](https://github.com/webanion/termi/commit/d96f286d9b02a95b146d446c3e54ee728a6002f4), [#91](https://github.com/webanion/termi/pull/91))
+- **lint:** run react-hooks' void-use-memo rule too ([67d3b2c](https://github.com/webanion/termi/commit/67d3b2cb1a0f0bc08cbec7503ffc24bda34ebdb5), [#89](https://github.com/webanion/termi/pull/89))
+- **lint:** lint with Oxlint in type-aware mode instead of ESLint ([0c66431](https://github.com/webanion/termi/commit/0c66431940c443dc0b1dd09e8cb9e9dd5d353f50), [#89](https://github.com/webanion/termi/pull/89))
+- **lint:** clear what the type-aware rules find outside the bug fixes ([859ba2e](https://github.com/webanion/termi/commit/859ba2e40a8cd83708b40295c4698273387366ca), [#89](https://github.com/webanion/termi/pull/89))
+
 ## v0.1.4 (2026-09-30)
 
 [Compare with v0.1.3](https://github.com/webanion/termi/compare/v0.1.3...v0.1.4)
