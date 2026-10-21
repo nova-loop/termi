@@ -22,6 +22,7 @@ A terminal app for macOS and Linux with a warm dark theme, saved commands that o
 - Select text in a terminal to copy it. A double-click copies a word, and a triple-click copies a line.
 - Right-click a terminal for Copy, Paste, Select All and Clear Buffer. On a link, the menu can also open the link in your browser or copy its address. While a program takes the mouse, as tmux and vim can, a right-click is the program's, and ⌥ right-click (Shift+right-click on Linux) opens the menu.
 - Drop files or folders from Finder or the file manager on a terminal to type their paths, quoted for the shell, as Terminal.app does. Nothing runs until you press Enter, and in a split tab the paths go to the terminal under the pointer. This is how a tool like Claude Code attaches a dropped image.
+- Shift+Enter adds a new line in Claude Code's prompt, where Enter sends the message. Termi sends Shift+Enter as ESC and Enter, the bytes Claude Code's `/terminal-setup` sets up in other terminals. In zsh it adds a line to the command, and in bash it only rings the bell.
 - Drop a folder on the sidebar to open a new terminal in it. A dropped file opens one in the folder it is in. One drop opens up to 4 terminals.
 - The sidebar footer shows CPU use, memory use, and download and upload speed. Termi checks them every 1.5 seconds, and stops while the window is minimized.
 - Termi reopens at the same window position and size. If that display is gone, the window moves to the main display.
