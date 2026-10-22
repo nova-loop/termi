@@ -81,7 +81,7 @@
     "react-dom": "^19.3.0",
     "typescript": "~6.0.3",
     "vite": "^7.3.7",
-    "vitest": "^5.0.2"
+    "vitest": "^5.0.5"
   },
   "build": {
     "appId": "com.webanion.termi",
